@@ -3,6 +3,8 @@ package ru.skypro.employee.employeewebapp.model;
 import java.util.Objects;
 import java.util.Random;
 
+import static org.apache.commons.lang3.StringUtils.capitalize;
+
 public class Employee {
     private String firstName;
     private String lastName;
@@ -11,15 +13,15 @@ public class Employee {
 
     public Employee(String firstName, String lastName) {
         Random random = new Random();
-        this.firstName = firstName;
-        this.lastName = lastName;
+        this.firstName = capitalize(firstName);
+        this.lastName = capitalize(lastName);
         this.salary = random.nextInt(10000) + 1000;
         this.departmentId = random.nextInt(5) + 1;
     }
 
     public Employee(String firstName, String lastName, int salary, int departmentId) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+        this.firstName = capitalize(firstName);
+        this.lastName = capitalize(lastName);
         this.salary = salary;
         this.departmentId = departmentId;
     }

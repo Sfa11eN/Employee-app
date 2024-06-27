@@ -14,6 +14,11 @@ import java.util.*;
 public class EmployeeServiceImpl implements EmployeeService {
     private static final int EMPLOYEE_STORAGE_SIZE = 10;
     private final Map<String, Employee> employees = new HashMap<>();
+    private final EmployeeValidationService employeeValidationService;
+
+    public EmployeeServiceImpl(EmployeeValidationService employeeValidationService) {
+        this.employeeValidationService = employeeValidationService;
+    }
 
     @Override
     public Employee add(String firstName, String lastName, int salary, int departmentId) {
@@ -60,6 +65,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         if (employees.containsKey(employee.getFullName())) {
             throw new EmployeeAlreadyAddedException();
         }
+        employeeValidationService.validate(employee.getFirstName(),employee.getLastName());
         employees.put(employee.getFullName(), employee);
         return employee;
     }
