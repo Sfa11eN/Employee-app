@@ -51,6 +51,7 @@ class DepartmentServiceImplTest {
     }
     @Test
     public void ShouldFindEmployeesByDepartmentId(){
+
         when(employeeService.findAll()).thenReturn(DIFFERENT_DEPARTMENTS_EMPLOYEES);
         assertEquals(singletonList(MAX_SALARY_EMPLOYEE),departmentService.findEmployeesByDepartment(DEPARTMENT_ID));
         assertEquals(singletonList(DIFFERENT_DEPARTMENT_EMPLOYEE),departmentService.findEmployeesByDepartment(DEPARTMENT_ID2));

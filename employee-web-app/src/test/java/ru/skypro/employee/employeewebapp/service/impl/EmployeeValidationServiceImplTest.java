@@ -12,6 +12,7 @@ public class EmployeeValidationServiceImplTest {
 
     @Test
     public void shouldThrowInvalidEmployeeDataException(){
+
         assertThrows(InvalidEmployeeDataException.class,
                 () -> validationService.validate(INCORRECT_FIRST_NAME,INCORRECT_LAST_NAME));
     }

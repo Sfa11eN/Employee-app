@@ -50,6 +50,7 @@ public class EmployeeTestConstants {
     public static final List<Employee> DIFFERENT_DEPARTMENTS_EMPLOYEES=List.of(MAX_SALARY_EMPLOYEE,MIN_SALARY_EMPLOYEE,DIFFERENT_DEPARTMENT_EMPLOYEE);
     public static final Integer DEPARTMENT_TOTAL_SALARY = EMPLOYEES.stream().mapToInt(Employee::getSalary).sum();
 
+
     public static final Map<Integer,List<Employee>> EMPLOYEES_BY_DEPARTMENT_MAP=DIFFERENT_DEPARTMENTS_EMPLOYEES.stream().collect(groupingBy(Employee::getDepartmentId));
 
 

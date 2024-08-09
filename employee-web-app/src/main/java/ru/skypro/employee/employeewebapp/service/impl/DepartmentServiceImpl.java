@@ -57,6 +57,7 @@ public class DepartmentServiceImpl implements DepartmentService {
                 .filter(e->e.getDepartmentId()==departmentId)
                 .sorted(comparing(Employee::getFullName))
                 .collect(Collectors.toList());
+
     }
 
     @Override

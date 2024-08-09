@@ -45,6 +45,7 @@ class EmployeeServiceImplTest {
 
     @Test
     public void shouldThrownEmployeeAlreadyAddedException() {
+
         Employee addedEmployee = employeeService.add(FIRST_NAME, LAST_NAME, MAX_SALARY, DEPARTMENT_ID);
         assertThrows(EmployeeAlreadyAddedException.class,
                 () -> employeeService.add(FIRST_NAME, LAST_NAME, MAX_SALARY, DEPARTMENT_ID));
